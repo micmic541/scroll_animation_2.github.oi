@@ -1,0 +1,214 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #55423d;
+  color: #fffffe;
+  max-width: 1170px;
+  margin: 0 auto;
+  width: 90%;
+  overflow-x: hidden;
+}
+
+body header h1 {
+  line-height: 1.8;
+  font-size: 350%;
+  padding-top: 1ch;
+  -webkit-animation: ttlAnimation 1s ease;
+          animation: ttlAnimation 1s ease;
+}
+
+@media (max-width: 768px) {
+  body header h1 {
+    font-size: 250%;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+}
+
+body header p {
+  padding-bottom: 5ch;
+}
+
+body main {
+  position: relative;
+}
+
+body main::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 1980px;
+  width: 100%;
+  background-color: #271c19;
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+
+body main li {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5vh 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  body main li {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    padding: 3vh 0;
+  }
+}
+
+body main li img {
+  max-width: 600px;
+  width: 90%;
+  border-radius: 1%;
+  opacity: 0;
+  -webkit-transition: all 1s .7s ease;
+  transition: all 1s .7s ease;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+@media (max-width: 768px) {
+  body main li img {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+body main li .animationText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+@media (max-width: 768px) {
+  body main li .animationText {
+    position: static;
+    padding-top: 1rem;
+    -webkit-box-align: inherit;
+        -ms-flex-align: inherit;
+            align-items: inherit;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+}
+
+body main li .animationText h2 {
+  background-color: rgba(255, 192, 173, 0.6);
+  border-radius: 1%;
+  line-height: 1.6;
+  font-size: 250%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform: translate(50px, 10px);
+          transform: translate(50px, 10px);
+}
+
+@media (max-width: 768px) {
+  body main li .animationText h2 {
+    font-size: 200%;
+    line-height: 1.2;
+    margin-bottom: 0rem;
+    width: 100%;
+  }
+}
+
+body main li .animationText p {
+  background-color: #140d0b;
+  border-radius: 1%;
+  padding: 1rem;
+  width: 90%;
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform: translate(-50px, 10px);
+          transform: translate(-50px, 10px);
+}
+
+@media (max-width: 768px) {
+  body main li .animationText p {
+    width: 100%;
+  }
+}
+
+body main li:first-of-type {
+  padding-top: 5vh;
+}
+
+@media (max-width: 768px) {
+  body main li:first-of-type {
+    padding-top: 0vh;
+  }
+}
+
+body main li:nth-of-type(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+body main li:nth-of-type(even) .animationText {
+  right: 50%;
+  left: 0;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+body .copy {
+  padding: 1rem;
+}
+
+body .copy small {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.animateTarget.show img, .animateTarget.show p, .animateTarget.show h2 {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+
+@-webkit-keyframes ttlAnimation {
+  0% {
+    letter-spacing: .3em;
+  }
+  100% {
+  }
+}
+
+@keyframes ttlAnimation {
+  0% {
+    letter-spacing: .3em;
+  }
+  100% {
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,153 @@
+$tab: 768px;
+
+@mixin tab {
+    @media (max-width: ($tab)) {
+      @content;
+    }
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #55423d;
+    color: #fffffe;
+    max-width: 1170px;
+    margin: 0 auto;
+    width: 90%;
+    overflow-x: hidden;
+    header {
+        h1 {
+            line-height: 1.8;
+            font-size: 350%;
+            padding-top: 1ch;
+            animation: ttlAnimation 1s ease;
+            @include tab {
+                font-size: 250%;
+                line-height: 1.1;
+                margin-bottom: 2rem;
+            };
+        }
+        p {
+            padding-bottom: 5ch;
+        }
+    }
+    main {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -10px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                min-width: 1980px;
+                width: 100%;
+                background-color: #271c19;
+                transform: translateX(-20%);
+            }
+            li {
+                list-style-type: none;
+                display: flex;
+                padding: 5vh 0;
+                position: relative;
+                @include tab {
+                    flex-direction: column !important;
+                    padding: 3vh 0;
+                }
+                img {
+                    max-width: 600px;
+                    width: 90%;
+                    border-radius: 1%;
+                    opacity: 0;
+                    transition: all 1s .7s ease;
+                    transform: translateY(10px);
+                    @include tab {
+                        width: 100%;
+                        max-width: none;
+                    };
+                }
+                .animationText {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    position: absolute;
+                    top: 20%;
+                    left: 50%;
+                    @include tab {
+                        position: static;
+                        padding-top: 1rem;
+                        align-items: inherit;
+                        transform: translateY(-30px);
+                    };
+                    h2 {
+                        background-color: rgba(255,192,173,.6);
+                        border-radius: 1%;
+                        line-height: 1.6;
+                        font-size: 250%;
+                        margin-bottom: 1rem;
+                        padding: 1rem;
+                        opacity: 0;
+                        transition: all 1s ease;
+                        transform: translate(50px, 10px);
+                        @include tab {
+                            font-size: 200%;
+                            line-height: 1.2;
+                            margin-bottom: 0rem;
+                            width: 100%;
+                        };
+                    }
+                    p {
+                        background-color: #140d0b;
+                        border-radius: 1%;
+                        padding: 1rem;
+                        width: 90%;
+                        opacity: 0;
+                        transition: all 1s ease;
+                        transform: translate(-50px, 10px);
+                        @include tab {
+                            width: 100%;
+                        }
+                    }
+                }
+                &:first-of-type {
+                    padding-top: 5vh;
+                    @include tab {
+                        padding-top: 0vh;
+                    }
+                }
+                &:nth-of-type(even) {
+                    flex-direction: row-reverse;
+                    .animationText {
+                        right: 50%;
+                        left: 0;
+                        align-items: flex-end;
+                    }
+                }
+            }
+    }
+    .copy {
+        padding: 1rem;
+       small {
+           margin: 0 auto;
+           text-align: center;
+       }
+    }
+}
+
+.animateTarget.show {
+    img, p, h2{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes ttlAnimation {
+    0% {
+        letter-spacing: .3em;
+    }
+    100% {
+
+    }
+}
